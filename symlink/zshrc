@@ -1,0 +1,27 @@
+ZSH=$HOME/.dotfiles/oh-my-zsh/
+ZSH_THEME="agnoster"
+
+# enable command auto-correction.
+ENABLE_CORRECTION="true"
+
+# display red dots whilst waiting for completion.
+COMPLETION_WAITING_DOTS="true"
+
+# activate extended move command provided by zsh
+autoload -U zmv
+
+# oh-my-zsh plugins
+plugins=(git)
+
+# includes
+source $ZSH/oh-my-zsh.sh
+source $HOME/.aliases
+
+# private configuration
+ZSHRC_PRIVATE=$HOME/.dotfiles/private/zshrc
+
+if [ -f $ZSHRC_PRIVATE ]; then
+  source $ZSHRC_PRIVATE
+fi
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

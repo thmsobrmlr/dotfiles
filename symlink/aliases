@@ -1,0 +1,8 @@
+alias ll='ls -alGh'
+alias ls='ls -Gh'
+
+# extended move e.g. "mmv **/*2014.log **/*2015.log"
+alias mmv='noglob zmv -W'
+
+alias gs='git status --short'
+alias gco='git checkout'

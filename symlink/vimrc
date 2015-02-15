@@ -1,0 +1,13 @@
+set encoding=utf-8
+
+" display tabs and trailing whitespace
+set listchars=trail:·,tab:→→
+set list
+
+" expand tabs to spaces
+set expandtab
+set tabstop=2
+set softtabstop=2
+
+" use two spaces for intendation
+set shiftwidth=2

@@ -1,0 +1,2 @@
+# don't display username in prompt for default user
+DEFAULT_USER="myusername"
