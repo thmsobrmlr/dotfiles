@@ -11,3 +11,12 @@ set softtabstop=2
 
 " use two spaces for intendation
 set shiftwidth=2
+
+" unmap arrow keys
+" noremap <Up> <nop>
+" noremap <Down> <nop>
+" noremap <Left> <nop>
+" noremap <Right> <nop>
+
+" syntax highlighting
+syntax enable
