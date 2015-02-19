@@ -1,3 +1,5 @@
+`git clone git@github.com:thomas88/dotfiles.git ~/.dotfiles`
+
 ## Install common tools with homebrew
 
 `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`  

@@ -1,4 +1,14 @@
+set nocompatible
 set encoding=utf-8
+
+" allow usage of mouse
+if has("mouse")
+  set mouse=a
+endif
+
+" tab completion
+set wildmode=longest,list
+set wildmenu
 
 " display tabs and trailing whitespace
 set listchars=trail:·,tab:→→
@@ -9,8 +19,39 @@ set expandtab
 set tabstop=2
 set softtabstop=2
 
-" use two spaces for intendation
+" use two spaces for indentation
 set shiftwidth=2
+
+" case insensitive search
+set ignorecase
+set smartcase
+
+" incremental search with term highlighting
+set incsearch
+set hlsearch
+
+" enable autoindent
+set autoindent
+set smartindent
+
+" enable syntax highlighting and show line numbers
+syntax enable
+set number
+
+" mark overlong columns (80 chars)
+highlight OverLength ctermbg=red ctermfg=white guibg=#660000
+match OverLength /\%81v.\+/
+
+" show more information command bar
+set showcmd
+set ruler
+
+" filetypes
+filetype on
+filetype plugin on
+filetype plugin indent on
+
+" mappings
 
 " unmap arrow keys
 " noremap <Up> <nop>
@@ -18,5 +59,5 @@ set shiftwidth=2
 " noremap <Left> <nop>
 " noremap <Right> <nop>
 
-" syntax highlighting
-syntax enable
+" spell checking
+map <F4> :set spell!<CR><Bar>:echo "Spell Check: " . strpart("OffOn", 3 * &spell, 3)<CR>
