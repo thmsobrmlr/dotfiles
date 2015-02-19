@@ -61,3 +61,6 @@ filetype plugin indent on
 
 " spell checking
 map <F4> :set spell!<CR><Bar>:echo "Spell Check: " . strpart("OffOn", 3 * &spell, 3)<CR>
+
+" toggle :set paste / :set nopaste
+set pastetoggle=<F10>

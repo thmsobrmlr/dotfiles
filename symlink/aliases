@@ -6,3 +6,10 @@ alias mmv='noglob zmv -W'
 
 alias gs='git status --short'
 alias gco='git checkout'
+alias gcob='git checkout -b'
+alias gci='git commit --verbose'
+alias gbr='git branch'
+alias gpl='git pull'
+
+# turn off globbing for rake (necessary for octopress)
+alias rake="noglob rake"
