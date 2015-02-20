@@ -5,13 +5,16 @@
 `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`  
 
 `brew install zsh`  
-`brew install git`
+`brew install tmux`  
+`brew install git`  
+
 
 ## Install applications with cask
 
 `brew install caskroom/cask/brew-cask`
 
-`brew cask install iterm2`
+`brew cask install iterm2`  
+`brew cask install virtualbox`
 
 ## Install fonts
 
