@@ -1,6 +1,17 @@
 set nocompatible
 set encoding=utf-8
 
+" load vundle
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+
+call vundle#begin()
+
+" vundle plugins
+Plugin 'gmarik/Vundle.vim'
+
+call vundle#end()
+
 " allow usage of mouse
 if has("mouse")
   set mouse=a
@@ -47,8 +58,6 @@ set showcmd
 set ruler
 
 " filetypes
-filetype on
-filetype plugin on
 filetype plugin indent on
 
 " mappings
