@@ -36,3 +36,9 @@ https://github.com/abertsch/Menlo-for-Powerline
 ## Install rvm
 
 `curl -L https://get.rvm.io | bash -s stable --autolibs=enable --rails`
+
+## Install npm
+
+tbd
+
+`npm install jsonlint -g'

@@ -7,8 +7,11 @@ set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
 
-" vundle plugins
+" let vundle manage vundle
 Plugin 'gmarik/Vundle.vim'
+
+" my vundle plugins
+Plugin 'scrooloose/syntastic'
 
 call vundle#end()
 
@@ -59,6 +62,9 @@ set ruler
 
 " filetypes
 filetype plugin indent on
+
+" json
+au! BufRead,BufNewFile *.json set filetype=json 
 
 " mappings
 
