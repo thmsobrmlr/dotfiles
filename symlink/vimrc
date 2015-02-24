@@ -68,6 +68,12 @@ filetype plugin indent on
 " noremap <Left> <nop>
 " noremap <Right> <nop>
 
+" easiear split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 " spell checking
 map <F4> :set spell!<CR><Bar>:echo "Spell Check: " . strpart("OffOn", 3 * &spell, 3)<CR>
 
