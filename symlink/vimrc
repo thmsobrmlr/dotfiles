@@ -11,7 +11,9 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " my vundle plugins
-Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic' " syntax checking
+Plugin 'scrooloose/nerdtree' " tree explorer
+Plugin 'tpope/vim-rails' " rails
 
 call vundle#end()
 

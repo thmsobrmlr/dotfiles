@@ -1,5 +1,9 @@
 `git clone git@github.com:thomas88/dotfiles.git ~/.dotfiles`
 
+## Set hostname
+
+`sudo scutil --set HostName thomas88-mbp.local`
+
 ## Install common tools with homebrew
 
 `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`  
@@ -7,7 +11,7 @@
 `brew install zsh`  
 `brew install tmux`  
 `brew install git`  
-
+`brew install htop`  
 
 ## Install applications with cask
 
