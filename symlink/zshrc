@@ -1,9 +1,6 @@
 ZSH=$HOME/.dotfiles/oh-my-zsh/
 ZSH_THEME="agnoster"
 
-# enable command auto-correction.
-ENABLE_CORRECTION="true"
-
 # display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
 
