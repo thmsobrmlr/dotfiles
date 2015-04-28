@@ -13,7 +13,14 @@ Plugin 'gmarik/Vundle.vim'
 " my vundle plugins
 Plugin 'scrooloose/syntastic' " syntax checking
 Plugin 'scrooloose/nerdtree' " tree explorer
-Plugin 'tpope/vim-rails' " rails
+Plugin 'jistr/vim-nerdtree-tabs' " same NERDTree across all tabs
+Plugin 'tpope/vim-fugitive' " git wrapper
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-rake'
+Plugin 'tpope/vim-bundler'
+Plugin 'tomasr/molokai'
+Plugin 'bling/vim-airline'
+Plugin 'airblade/vim-gitgutter' " show git diff in gutter
 
 call vundle#end()
 
@@ -50,13 +57,26 @@ set hlsearch
 set autoindent
 set smartindent
 
-" enable syntax highlighting and show line numbers
+" syntax highlighting
 syntax enable
-set number
 
-" mark overlong columns (80 chars)
-highlight OverLength ctermbg=red ctermfg=white guibg=#660000
-match OverLength /\%81v.\+/
+" use molokai color scheme
+let g:molokai_original=1
+let g:rehash256=1
+set t_Co=256
+colorscheme molokai
+
+let g:airline_theme="luna"
+let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled=1 " smarter tab line
+
+set laststatus=2 " always show status line
+set cursorline " highlight the current line
+set number " show line numbers
+
+" remove "|" character from column separating vertical splits
+set fillchars+=vert:\ 
+hi VertSplit ctermbg=37
 
 " show more information command bar
 set showcmd
@@ -65,18 +85,16 @@ set ruler
 " filetypes
 filetype plugin indent on
 
-" json
-au! BufRead,BufNewFile *.json set filetype=json 
-
-" mappings
+autocmd BufNewFile,BufReadPost *.json set filetype=json
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 " unmap arrow keys
-" noremap <Up> <nop>
-" noremap <Down> <nop>
-" noremap <Left> <nop>
-" noremap <Right> <nop>
+noremap <Up> <nop>
+noremap <Down> <nop>
+noremap <Left> <nop>
+noremap <Right> <nop>
 
-" easiear split navigations
+" easier split navigations
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
@@ -87,3 +105,9 @@ map <F4> :set spell!<CR><Bar>:echo "Spell Check: " . strpart("OffOn", 3 * &spell
 
 " toggle :set paste / :set nopaste
 set pastetoggle=<F10>
+
+" toogle NERDTree
+" map <C-n> :NERDTreeToggle<CR>
+map <C-n> <plug>NERDTreeTabsToggle<CR>
+let NERDTreeMinimalUI=1
+let NERDTreeMouseMode=2
