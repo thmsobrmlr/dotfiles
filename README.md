@@ -13,12 +13,19 @@
 `brew install git`  
 `brew install htop`  
 
+Install `battery` command.
+`brew tap Goles/battery`
+`brew install battery`
+`brew install spark; curl -O https://raw.github.com/Goles/Battery/master/battery ; \
+sudo mv battery /usr/bin; sudo chmod 755 /usr/bin/battery`
+
 ## Install applications with cask
 
 `brew install caskroom/cask/brew-cask`
 
 `brew cask install iterm2`  
 `brew cask install virtualbox`
+`brew cask install amethyst`
 
 ## Install fonts
 
