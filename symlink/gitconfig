@@ -25,9 +25,17 @@
   # Prevent showing files whose names contain non-ASCII symbols as unversioned.
   # http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
   precomposeunicode = false
+	editor = /usr/bin/vim
 
 [push]
   default = simple
 
 [include]
   path = ~/.dotfiles/private/gitconfig
+[user]
+	name = Thomas Obermüller
+	email = thomas.obermueller@gmail.com
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
