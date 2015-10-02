@@ -100,6 +100,12 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" easier access to esc key
+inoremap jj <ESC>
+
+" use mapleader as space
+let mapleader = "\<Space>"
+
 " spell checking
 map <F4> :set spell!<CR><Bar>:echo "Spell Check: " . strpart("OffOn", 3 * &spell, 3)<CR>
 
