@@ -33,3 +33,5 @@ export ANDROID_HOME=/usr/local/opt/android-sdk
 
 
 eval "$(rbenv init -)" # Enable rbenv shims and autocompletion
+
+ssh-add -A 2>/dev/null;
