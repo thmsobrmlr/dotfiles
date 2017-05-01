@@ -13,3 +13,5 @@ alias gpl='git pull'
 
 # turn off globbing for rake (necessary for octopress)
 alias rake="noglob rake"
+
+alias be='bundle exec'
