@@ -22,6 +22,7 @@ Plugin 'tpope/vim-bundler'
 Plugin 'tomasr/molokai'
 Plugin 'bling/vim-airline'
 Plugin 'airblade/vim-gitgutter' " show git diff in gutter
+Plugin 'mxw/vim-jsx'
 
 call vundle#end()
 
@@ -118,3 +119,10 @@ set pastetoggle=<F10>
 map <C-n> <plug>NERDTreeTabsToggle<CR>
 let NERDTreeMinimalUI=1
 let NERDTreeMouseMode=2
+
+" allow jsx syntax in js files
+let g:jsx_ext_required = 0
+
+" use eslint for javascript
+let g:syntastic_javascript_checkers = ['eslint']
+
