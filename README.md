@@ -12,6 +12,7 @@
 `brew install tmux`  
 `brew install git`  
 `brew install htop`  
+`brew install ack`
 
 Install `battery` command.
 `brew tap Goles/battery`
