@@ -1,3 +1,6 @@
+[init]
+  defaultBranch = main
+
 [alias]
   # View abbreviated SHA and history graph of the latest 20 commits
   l = log --graph --abbrev-commit --date=relative
@@ -26,6 +29,7 @@
   # http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
   precomposeunicode = false
 	editor = /usr/bin/vim
+	ignorecase = false
 
 [push]
   default = simple
@@ -33,9 +37,10 @@
 [include]
   path = ~/.dotfiles/private/gitconfig
 [user]
-	name = Thomas Obermüller
+	name = Thomas Obermüller
 	email = thomas.obermueller@gmail.com
 [filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
 	required = true
+	process = git-lfs filter-process

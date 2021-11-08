@@ -1,17 +1,19 @@
 alias ll='ls -alGh'
 alias ls='ls -Gh'
 
+alias tree='tree -C'
+
 # extended move e.g. "mmv **/*2014.log **/*2015.log"
 alias mmv='noglob zmv -W'
 
 alias gs='git status --short'
+alias gst='git status'
 alias gco='git checkout'
-alias gcob='git checkout -b'
-alias gci='git commit --verbose'
-alias gbr='git branch'
-alias gpl='git pull'
-
-# turn off globbing for rake (necessary for octopress)
-alias rake="noglob rake"
+alias gp='git push'
+alias gl='git pull'
 
 alias be='bundle exec'
+
+alias cdbe='cd ~/WorkpathCode/workpath_api'
+alias cdfe='cd ~/WorkpathCode/workpath_web'
+alias cdchef='cd ~/WorkpathCode/workpath_chef'
