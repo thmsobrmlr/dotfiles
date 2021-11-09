@@ -12,7 +12,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " my vundle plugins
-Plugin 'scrooloose/syntastic' " syntax checking
+Plugin 'vim-syntastic/syntastic' " syntax checking
 Plugin 'scrooloose/nerdtree' " tree explorer
 Plugin 'jistr/vim-nerdtree-tabs' " same NERDTree across all tabs
 Plugin 'tpope/vim-fugitive' " git wrapper
@@ -20,7 +20,7 @@ Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-rake'
 Plugin 'tpope/vim-bundler'
 Plugin 'tomasr/molokai'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'airblade/vim-gitgutter' " show git diff in gutter
 Plugin 'mxw/vim-jsx'
 
