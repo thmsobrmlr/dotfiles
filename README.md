@@ -7,6 +7,10 @@
 2. Create the required symlinks with the init script
 
    `cd ~/.dotfiles && ./init.sh`
+   
+3. Install command line tools
+
+   `xcode-select --install`
 
 ## Hostname
 
