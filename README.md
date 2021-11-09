@@ -1,56 +1,84 @@
-`git clone git@github.com:thomas88/dotfiles.git ~/.dotfiles`
+## General
 
-## Set hostname
+1. Clone the repository to `~/.dotfiles`
+  
+   `git clone git@github.com:thomas88/dotfiles.git ~/.dotfiles`
+   
+2. Create the required symlinks with the init script
 
-`sudo scutil --set HostName thomas88-mbp.local`
+   `cd ~/.dotfiles && ./init.sh`
 
-## Install common tools with homebrew
+## Hostname
 
-`ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`  
+`sudo scutil --set HostName thomas-mbp.local`
+
+## Homebrew
+
+### Install [Homebrew](https://brew.sh/)
+
+```
+# Install homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Add to .zprofile
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile 
+```
+
+### Install common tools
 
 `brew install zsh`  
-`brew install tmux`  
 `brew install git`  
-`brew install htop`  
-`brew install ack`
+`brew install starship`  
 
-Install `battery` command.
-`brew tap Goles/battery`
-`brew install battery`
-`brew install spark; curl -O https://raw.github.com/Goles/Battery/master/battery ; \
-sudo mv battery /usr/bin; sudo chmod 755 /usr/bin/battery`
+## Fonts
 
-## Install applications with cask
+`cp -f $HOME/.dotfiles/resources/fonts/* $HOME/Library/Fonts`
 
-`brew install caskroom/cask/brew-cask`
-
-`brew cask install iterm2`  
-`brew cask install virtualbox`
-`brew cask install amethyst`
-
-## Install fonts
-
-`cp -f $HOME/.dotfiles/fonts/* $HOME/Library/Fonts`
-
-**Source of Source Code Pro for Powerline:**  
+**Source Code Pro for Powerline:**  
 https://github.com/powerline/fonts/tree/master/SourceCodePro
 
-**Source of Menlo for Powerline:**  
-https://github.com/abertsch/Menlo-for-Powerline
+**Anonymous Pro:**  
+https://fonts.google.com/specimen/Anonymous+Pro
 
-## Setup iTerm2
+## iTerm2
 
-- Install Solarized Theme with iTerm2 (import files from iterm folder).
-- Run init script `./init.sh`.
-- Change default shell to zsh `chsh -s /bin/zsh`.
-- Set default iTerm2 font to "Source Code Pro for Powerline" with 14pt size.
+### Solarized Theme
 
-## Install rvm
+Install the Solarized Theme by importing the Color Preset from `$HOME/.dotfiles/resources/iterm` via Preferences -> Profiles -> Colors -> Color Presets… -> Import….
 
-`curl -L https://get.rvm.io | bash -s stable --autolibs=enable --rails`
+### Font
 
-## Install npm
+Set the font to "Source Code Pro for Powerline" with 14pt size, medium font weight and ligatures turned on via Preferences -> Profiles -> Text.
 
-tbd
+### Key Bindings
 
-`npm install jsonlint -g'
+Set key bindings for navigating tabs in Preferences -> Keys:
+- Next Tab: CMD+ALT+9
+- Previous Tab: CMD+ALT+8
+
+## Terminal
+
+### Solarized Theme
+
+Install the Solarized Theme by importing the Profile from `$HOME/.dotfiles/resources/terminal` via Preferences... -> Profiles -> ... -> Import….
+
+Set the profile as default.
+
+### Font
+
+Set the font to "Source Code Pro for Powerline" with 14pt size and medium font weight via Preferences... -> Profiles -> Solarized Dark -> Font -> Change...
+
+## Node
+
+1. [Install nvm](https://github.com/nvm-sh/nvm)
+
+    `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash`
+    
+2. Install latests active lts
+   
+    `nvm install --lts --latest-npm`
+    
+3. Install yarn
+
+    `npm install -g yarn`
+ 
