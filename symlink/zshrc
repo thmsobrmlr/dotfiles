@@ -43,7 +43,11 @@ export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
 ################################################################################
 # Kubernetes                                                                   #
 ################################################################################
-export KUBECTL_EXTERNAL_DIFF="colordiff -N -u"
+source <(kubectl completion zsh)
+
+alias kubectl=kubecolor
+# make completion work with kubecolor
+compdef kubecolor=kubectl
 
 ################################################################################
 # Android SDK                                                                  #

@@ -35,6 +35,7 @@ echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
 `brew install starship`  
 `brew install git-delta`  
 `brew install colordiff`  
+`brew install dty1er/tap/kubecolor`  
 `brew install kubectx` - kubectx and kubens  
 `brew install act` - run github actions locally  
 `brew install doctl` - digital ocean command line tools
