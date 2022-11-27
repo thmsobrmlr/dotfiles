@@ -6,6 +6,17 @@
 - [ ] Update App Store software
   - [ ] Delete "GarageBand" from Applications.
   - [ ] App Store -> Updates -> Update All.
+- [ ] Configure basic settings
+
+  ```
+  # speed up mouse tracking
+  defaults write -g com.apple.mouse.scaling 8
+
+  # speed up key repeat
+  defaults write -g InitialKeyRepeat -int 10 # normal minimum is 15 (225 ms)
+  defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
+  ```
+
 - [ ] Clone and bootstrap these dotfiles
   - [ ] Clone the repository to `~/.dotfiles`:
     ```
