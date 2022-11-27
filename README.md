@@ -36,6 +36,10 @@
     - [ ] Look up & data detectors - Off
     - [ ] Secondary click - Click or Tap with Two Fingers
     - [ ] Tap to click - On
+  - **Accessibility**
+    - [ ] Speed up scroll speed
+      - Pointer Control -> Trackpad Options… -> Scroll speed - Bunny
+      - Pointer Control -> Mouse Options… -> Scroll speed - Bunny
   - **Wallpaper** (after cloning this repo as below)
     - [ ] Add folder `~/.dotfiles/resources/wallpapers`
     - [ ] Pick one :)
@@ -90,14 +94,26 @@
     echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
     eval "$(/opt/homebrew/bin/brew shellenv)"
     ```
+- [ ] Install apps with [Homebrew Cask](https://formulae.brew.sh/cask/)
+
+  ```
+  brew install --cask 1password
+  brew install --cask google-chrome
+  brew install --cask firefox
+  brew install --cask iterm2
+  brew install --cask slack
+  brew install --cask zoom
+  brew install --cask visual-studio-code
+  brew install --cask spotify
+  brew install --cask figma
+  brew install --cask sourcetree
+  brew install --cask docker
+  brew install --cask flux
+  ```
 
 ## Hostname
 
 `sudo scutil --set HostName thomas-mbp.local`
-
-### Install
-
-```
 
 ### Install common tools
 
@@ -163,4 +179,7 @@ Set the font to "Source Code Pro for Powerline" with 14pt size and medium font w
 3. Install yarn
 
    `npm install -g yarn`
+
+```
+
 ```
