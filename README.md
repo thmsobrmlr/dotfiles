@@ -113,6 +113,20 @@
   brew install --cask skitch
   ```
 
+- [ ] Install cli utils with Homebrew
+
+  ```
+  brew install zsh
+  brew install git
+  brew install starship
+  brew install git-delta
+  brew install colordiff
+  brew install dty1er/tap/kubecolor
+  brew install kubectx # kubectx and kubens
+  brew install act # run github actions locally
+  brew install doctl # digital ocean command line tools
+  ```
+
 - [ ] Install App Store apps
   - [ ] Magnet
   - [ ] Airmail
@@ -120,18 +134,6 @@
 ## Hostname
 
 `sudo scutil --set HostName thomas-mbp.local`
-
-### Install common tools
-
-`brew install zsh`
-`brew install git`
-`brew install starship`
-`brew install git-delta`
-`brew install colordiff`
-`brew install dty1er/tap/kubecolor`
-`brew install kubectx` - kubectx and kubens
-`brew install act` - run github actions locally
-`brew install doctl` - digital ocean command line tools
 
 ## Fonts
 
