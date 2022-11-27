@@ -36,9 +36,14 @@
     - [ ] Look up & data detectors - Off
     - [ ] Secondary click - Click or Tap with Two Fingers
     - [ ] Tap to click - On
-  - **Wallpaper**
+  - **Wallpaper** (after cloning this repo as below)
     - [ ] Add folder `~/.dotfiles/resources/wallpapers`
     - [ ] Pick one :)
+  - **Desktop & Dock**
+    - [ ] Hot Corners…
+      - Top right: Mission Control
+      - Bottom right: Desktop
+      - Bottom left: Launchpad
 - [ ] Setup ssh for git
 
   - [ ] [Generate a new ssh key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
@@ -63,7 +68,7 @@
     ```
     pbcopy < ~/.ssh/id_ed25519.pub
     ```
-    Settings -> Access -> New SSH key
+    On GitHub: Settings -> SSH and GPG keys -> New SSH key
 
 - [ ] Clone and bootstrap these dotfiles
   - [ ] Clone the repository to `~/.dotfiles`:
