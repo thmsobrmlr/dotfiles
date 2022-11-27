@@ -11,21 +11,31 @@
   ```
   # speed up mouse and trackpad tracking
   defaults write -g com.apple.mouse.scaling 8
-  defaults write -g com.apple.trackpad.scaling 5
-
-  # enable tap to click
-  defaults write NSGlobalDomain com.apple.trackpad.Clicking 1
+  defaults write -g com.apple.trackpad.scaling 8
 
   # disable press and hold e.g. for umlauts
   defaults write -g ApplePressAndHoldEnabled -bool false
 
   # speed up key repeat
-  defaults write -g InitialKeyRepeat -int 10 # normal minimum is 15 (225 ms)
-  defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
-
-
+  defaults write -g InitialKeyRepeat -int 10
+  defaults write -g KeyRepeat -int 1
   ```
 
+- [ ] Configure basic settings (menu)
+  - **Lock Screen**
+    - [ ] Start Screen Saver when inactive - never
+    - [ ] Turn display off on battery when inactive - For 10 minutes
+  - **Keyboad**
+    - [ ] Press (world) key to - Do nothing
+    - [ ] Keyboard navigation - On
+  - **Mouse** (needs connected Magic Mouse)
+    - [ ] Secondary click - Click Right Side
+  - **Trackpad**
+    - [ ] Click - Light
+    - [ ] Force Click and haptic feedback - Off
+    - [ ] Look up & data detectors - Off
+    - [ ] Secondary click - Click or Tap with Two Fingers
+    - [ ] Tap to click - On
 - [ ] Clone and bootstrap these dotfiles
   - [ ] Clone the repository to `~/.dotfiles`:
     ```
