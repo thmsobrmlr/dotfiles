@@ -13,7 +13,3 @@ alias gp='git push'
 alias gl='git pull'
 
 alias be='bundle exec'
-
-alias cdbe='cd ~/WorkpathCode/workpath_api'
-alias cdfe='cd ~/WorkpathCode/workpath_web'
-alias cdchef='cd ~/WorkpathCode/workpath_chef'
