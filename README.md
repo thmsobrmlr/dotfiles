@@ -6,17 +6,24 @@
 - [ ] Update App Store software
   - [ ] Delete "GarageBand" from Applications.
   - [ ] App Store -> Updates -> Update All.
-- [ ] Configure basic settings
+- [ ] Configure basic settings (Restart afterwards)
 
   ```
-  # speed up mouse tracking
+  # speed up mouse and trackpad tracking
   defaults write -g com.apple.mouse.scaling 8
+  defaults write -g com.apple.trackpad.scaling 5
 
-  # speed up key repeat
+  # enable tap to click
+  defaults write NSGlobalDomain com.apple.trackpad.Clicking 1
+
+  # disable press and hold e.g. for umlauts
   defaults write -g ApplePressAndHoldEnabled -bool false
 
+  # speed up key repeat
   defaults write -g InitialKeyRepeat -int 10 # normal minimum is 15 (225 ms)
   defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
+
+
   ```
 
 - [ ] Clone and bootstrap these dotfiles
