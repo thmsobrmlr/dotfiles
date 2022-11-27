@@ -39,6 +39,32 @@
   - **Wallpaper**
     - [ ] Add folder `~/.dotfiles/resources/wallpapers`
     - [ ] Pick one :)
+- [ ] Setup ssh for git
+
+  - [ ] [Generate a new ssh key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
+
+    ```
+    ssh-keygen -t ed25519 -C "your_email@example.com"
+
+    touch ~/.ssh/config
+    ```
+
+    ```
+    Host *.github.com
+      AddKeysToAgent yes
+      IdentityFile ~/.ssh/id_ed25519
+    ```
+
+    ```
+    ssh-add ~/.ssh/id_ed25519
+    ```
+
+  - [ ] Add the key to GitHub
+    ```
+    pbcopy < ~/.ssh/id_ed25519.pub
+    ```
+    Settings -> Access -> New SSH key
+
 - [ ] Clone and bootstrap these dotfiles
   - [ ] Clone the repository to `~/.dotfiles`:
     ```
