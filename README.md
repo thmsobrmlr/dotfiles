@@ -103,13 +103,19 @@
   brew install --cask iterm2
   brew install --cask slack
   brew install --cask zoom
+  brew install --cask notion
   brew install --cask visual-studio-code
   brew install --cask spotify
   brew install --cask figma
   brew install --cask sourcetree
   brew install --cask docker
   brew install --cask flux
+  brew install --cask skitch
   ```
+
+- [ ] Install App Store apps
+  - [ ] Magnet
+  - [ ] Airmail
 
 ## Hostname
 
