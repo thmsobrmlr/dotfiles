@@ -36,6 +36,9 @@
     - [ ] Look up & data detectors - Off
     - [ ] Secondary click - Click or Tap with Two Fingers
     - [ ] Tap to click - On
+  - **Wallpaper**
+    - [ ] Add folder `~/.dotfiles/resources/wallpapers`
+    - [ ] Pick one :)
 - [ ] Clone and bootstrap these dotfiles
   - [ ] Clone the repository to `~/.dotfiles`:
     ```
