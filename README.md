@@ -1,53 +1,60 @@
-## General
+## Setting up a new machine
 
-1. Clone the repository to `~/.dotfiles`
-
-   `git clone git@github.com:thomas88/dotfiles.git ~/.dotfiles`
-
-2. Create the required symlinks with the init script
-
-   `cd ~/.dotfiles && ./init.sh`
-
-3. Install command line tools
-
-   `xcode-select --install`
+- [ ] Update MacOS
+  -  -> System Settings… -> General -> Software Update.
+  - Install the latest MacOS update.
+- [ ] Update App Store software
+  - [ ] Delete "GarageBand" from Applications.
+  - [ ] App Store -> Updates -> Update All.
+- [ ] Clone and bootstrap these dotfiles
+  - [ ] Clone the repository to `~/.dotfiles`:
+    ```
+    git clone git@github.com:thmsobrmlr/dotfiles.git ~/.dotfiles
+    ```
+  - [ ] Create the required symlinks with the init script:
+    ```
+    cd ~/.dotfiles && ./symlink.sh
+    ```
+- [ ] Install [Homebrew](https://brew.sh/)
+  - [ ] Download and install:
+    ```
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    ```
+  - [ ] Add to `.zprofile`:
+    ```
+    echo '# Set PATH, MANPATH, etc., for Homebrew.' >> ~/.zprofile
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+    ```
 
 ## Hostname
 
 `sudo scutil --set HostName thomas-mbp.local`
 
-## Homebrew
+### Install
 
-### Install [Homebrew](https://brew.sh/)
-
-```
-# Install homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-# Add to .zprofile
-echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
 ```
 
 ### Install common tools
 
-`brew install zsh`  
-`brew install git`  
-`brew install starship`  
-`brew install git-delta`  
-`brew install colordiff`  
-`brew install dty1er/tap/kubecolor`  
-`brew install kubectx` - kubectx and kubens  
-`brew install act` - run github actions locally  
+`brew install zsh`
+`brew install git`
+`brew install starship`
+`brew install git-delta`
+`brew install colordiff`
+`brew install dty1er/tap/kubecolor`
+`brew install kubectx` - kubectx and kubens
+`brew install act` - run github actions locally
 `brew install doctl` - digital ocean command line tools
 
 ## Fonts
 
 `cp -f $HOME/.dotfiles/resources/fonts/* $HOME/Library/Fonts`
 
-**Source Code Pro for Powerline:**  
+**Source Code Pro for Powerline:**
 https://github.com/powerline/fonts/tree/master/SourceCodePro
 
-**Anonymous Pro:**  
+**Anonymous Pro:**
 https://fonts.google.com/specimen/Anonymous+Pro
 
 ## iTerm2
@@ -92,3 +99,4 @@ Set the font to "Source Code Pro for Powerline" with 14pt size and medium font w
 3. Install yarn
 
    `npm install -g yarn`
+```
