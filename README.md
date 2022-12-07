@@ -22,12 +22,19 @@
   ```
 
 - [ ] Configure basic settings (menu)
+  - **Desktop & Dock**
+    - [ ] Automatically show and hide the Dock - On
   - **Lock Screen**
     - [ ] Start Screen Saver when inactive - never
     - [ ] Turn display off on battery when inactive - For 10 minutes
   - **Keyboad**
     - [ ] Press (world) key to - Do nothing
     - [ ] Keyboard navigation - On
+    - [ ] Keyboard Shortcuts... -> App Shortcuts
+      - All Applications -> Show Help menu - Off
+      - Google Chrome
+        - Select Previous Tab - Alt-Cmd-8
+        - Select Next Tab - Alt-Cmd-9
   - **Mouse** (needs connected Magic Mouse)
     - [ ] Secondary click - Click Right Side
   - **Trackpad**
@@ -115,17 +122,18 @@
 
 - [ ] Install cli utils with Homebrew
 
-  ```
-  brew install zsh
-  brew install git
-  brew install starship
-  brew install git-delta
-  brew install colordiff
-  brew install dty1er/tap/kubecolor
-  brew install kubectx # kubectx and kubens
-  brew install act # run github actions locally
-  brew install doctl # digital ocean command line tools
-  ```
+  `brew install zsh`
+  `brew install git`
+  `brew install starship`
+  `brew install git-delta`
+  `brew install colordiff`
+  `brew install dty1er/tap/kubecolor`
+  `brew install kubectx` - kubectx and kubens
+  `brew install act` - run github actions locally
+  `brew install doctl` - digital ocean command line tools
+  `brew install rbenv ruby-build` - rbenv
+  `brew install pyenv` - pyenv
+  `brew install gh` - official github cli
 
 - [ ] Install App Store apps
   - [ ] Magnet
