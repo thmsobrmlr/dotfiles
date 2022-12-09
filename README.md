@@ -195,7 +195,3 @@ Set the font to "Source Code Pro for Powerline" with 14pt size and medium font w
 3. Install yarn
 
    `npm install -g yarn`
-
-```
-
-```
