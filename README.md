@@ -134,6 +134,8 @@
   `brew install rbenv ruby-build` - rbenv
   `brew install pyenv` - pyenv
   `brew install gh` - official github cli
+  `brew install fig`
+  `brew install fastlane`
 
 - [ ] Install App Store apps
   - [ ] Magnet
@@ -181,6 +183,23 @@ Set the profile as default.
 ### Font
 
 Set the font to "Source Code Pro for Powerline" with 14pt size and medium font weight via Preferences... -> Profiles -> Solarized Dark -> Font -> Change...
+
+## Keys
+
+### SSH Key (GitHub ssh)
+
+_tbd_
+
+### GPG Key (GitHub verified commits)
+
+Use ssh key instead:
+https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key#telling-git-about-your-ssh-key
+
+```
+git config --global gpg.format ssh
+git config --global user.signingkey ~/.ssh/id_ed25519.pub
+git config --global commit.gpgsign true
+```
 
 ## Node
 
