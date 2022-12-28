@@ -136,6 +136,8 @@
   `brew install gh` - official github cli
   `brew install fig`
   `brew install fastlane`
+  `brew install fzf` - ctrl+r history search and more
+  `brew install ctop` - top for containers / docker
 
 - [ ] Install App Store apps
   - [ ] Magnet
