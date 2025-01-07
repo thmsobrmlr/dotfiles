@@ -33,6 +33,7 @@
   precomposeunicode = false
 	editor = /usr/bin/vim
 	ignorecase = false
+	preloadindex = true
 
 [push]
   default = simple

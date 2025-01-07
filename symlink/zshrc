@@ -1,6 +1,3 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
-
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
@@ -64,10 +61,14 @@ eval "$(pyenv init -)"
 # Javascript / Typescript / Node                                               #
 ################################################################################
 
+NVM_SYMLINK_CURRENT=true
+
 # nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+
+export PATH="$HOME/.nvm/current/bin:$PATH"
 
 # Yarn
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
@@ -130,6 +131,3 @@ export ANDROID_SDK="/Users/thomas/Library/Android/sdk"
 export ANDROID_SDK_ROOT="/Users/thomas/Library/Android/sdk"
 export PATH="$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools:$PATH"
 export PATH="$ANDROID_SDK/emulator:$ANDROID_SDK/tools:$PATH"
-
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
