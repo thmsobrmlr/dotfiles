@@ -62,9 +62,6 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH="$HOME/.nvm/current/bin:$PATH"
 
-# Yarn
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
 # run nvm use automatically
 # https://stackoverflow.com/questions/23556330/run-nvm-use-automatically-every-time-theres-a-nvmrc-file-on-the-directory
 autoload -U add-zsh-hook
@@ -95,12 +92,6 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
-
-################################################################################
-# Postgres                                                                     #
-################################################################################
-export PATH="/usr/local/Cellar/postgresql@9.6/9.6.9/bin:$PATH"
-export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
 
 ################################################################################
 # Kubernetes                                                                   #
