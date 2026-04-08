@@ -14,63 +14,85 @@
 - [ ] Update App Store software
   - [ ] App Store -> Updates -> Update All.
 
-### Basic settings
+### System settings
 
-- [ ] Configure basic settings (Restart afterwards)
+#### Hostname
 
+- [ ] General > About > Click the Name field at the top > Enter desired name e.g. "Thomas’s MacBook Pro (Personal)"
+- [ ] Confirm with:
   ```
-  # speed up mouse and trackpad tracking
-  defaults write -g com.apple.mouse.scaling 8
-  defaults write -g com.apple.trackpad.scaling 8
+  scutil --get ComputerName
+  scutil --get LocalHostName
+  scutil --get HostName
+  hostname
 
-  # disable press and hold e.g. for umlauts
-  defaults write -g ApplePressAndHoldEnabled -bool false
-
-  # speed up key repeat
-  defaults write -g InitialKeyRepeat -int 10
-  defaults write -g KeyRepeat -int 1
+  Thomas’s MacBook Pro (Personal)
+  Thomass-MacBook-Pro-Personal
+  HostName: not set
+  Thomass-MacBook-Pro-Personal.local
   ```
 
-- [ ] Configure basic settings (menu)
-  - **Desktop & Dock**
-    - [ ] Automatically show and hide the Dock - On
-  - **Lock Screen**
-    - [ ] Start Screen Saver when inactive - never
-    - [ ] Turn display off on battery when inactive - For 10 minutes
-  - **Keyboard**
-    - [ ] Press (world) key to - Do nothing
-    - [ ] Keyboard navigation - On
-    - [ ] Keyboard Shortcuts... -> App Shortcuts
-      - All Applications -> Show Help menu - Off
-      - Google Chrome/Brave
-        - Select Previous Tab - ⌥⌘8
-        - Select Next Tab - ⌥⌘9
-  - **Mouse** (needs connected Magic Mouse)
-    - [ ] Secondary click - Click Right Side
-  - **Trackpad**
-    - [ ] Click - Light
-    - [ ] Force Click and haptic feedback - Off
-    - [ ] Look up & data detectors - Off
-    - [ ] Secondary click - Click or Tap with Two Fingers
-    - [ ] Tap to click - On
-  - **Accessibility**
-    - [ ] Speed up scroll speed
-      - Pointer Control -> Trackpad Options… -> Scroll speed - Bunny
-      - Pointer Control -> Mouse Options… -> Scroll speed - Bunny
-  - **Wallpaper** (after cloning this repo as below)
-    - [ ] Add folder `~/.dotfiles/resources/wallpapers`
-    - [ ] Pick one :)
-  - **Desktop & Dock**
-    - [ ] Hot Corners…
-      - Top right: Mission Control
-      - Bottom right: Desktop
-      - Bottom left: Launchpad
-  - **Universal Control**
-    - [ ] Configure accordingly
+
+#### Desktop & Dock
+- [ ] Automatically show and hide the Dock - On
+
+#### Lock Screen
+- [ ] Start Screen Saver when inactive - never
+- [ ] Turn display off on battery when inactive - For 10 minutes
+
+#### Keyboard
+- [ ] Press (world) key to - Do nothing
+- [ ] Keyboard navigation - On
+- [ ] Keyboard Shortcuts... -> App Shortcuts
+  - All Applications -> Show Help menu - Off
+  - Google Chrome/Brave
+    - Select Previous Tab - ⌥⌘8
+    - Select Next Tab - ⌥⌘9
+
+#### Mouse** (needs connected Magic Mous
+- [ ] Secondary click - Click Right Side
+
+#### Trackpad
+- [ ] Click - Light
+- [ ] Force Click and haptic feedback - Off
+- [ ] Look up & data detectors - Off
+- [ ] Secondary click - Click or Tap with Two Fingers
+- [ ] Tap to click - On
+
+#### Accessibility
+- [ ] Speed up scroll speed
+  - Pointer Control -> Trackpad Options… -> Scroll speed - Bunny
+  - Pointer Control -> Mouse Options… -> Scroll speed - Bunny
+
+#### Desktop & Dock
+- [ ] Hot Corners…
+  - Top right: Mission Control
+  - Bottom right: Desktop
+  - Bottom left: Launchpad
+
+#### Universal Control
+- [ ] Configure accordingly
+
+### System settings - Terminal (Restart afterwards)
+
+#### Mouse, trackpad and keyboard settings
+
+```
+# speed up mouse and trackpad tracking
+defaults write -g com.apple.mouse.scaling 8
+defaults write -g com.apple.trackpad.scaling 8
+
+# disable press and hold e.g. for umlauts
+defaults write -g ApplePressAndHoldEnabled -bool false
+
+# speed up key repeat
+defaults write -g InitialKeyRepeat -int 10
+defaults write -g KeyRepeat -int 1
+```
 
 ### Setup git
 
-tbd
+Follow the [1Password SSH key management guide](https://developer.1password.com/docs/ssh/manage-keys).
 
 ### Clone .dotfiles
 
@@ -136,7 +158,7 @@ tbd
   - [ ] Magnet
   - [ ] Airmail
 
-## Hostname
+
 
 `sudo scutil --set HostName thomas-mbp.local`
 
