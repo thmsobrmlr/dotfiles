@@ -1,11 +1,21 @@
 ## Setting up a new machine
 
+### Update software and remove things I don't use
+
 - [ ] Update MacOS
   -  -> System Settings… -> General -> Software Update.
   - Install the latest MacOS update.
-- [ ] Update App Store software
+- [ ] Delete large preinstall software that I don't use
   - [ ] Delete "GarageBand" from Applications.
+  - [ ] Delete "iMovie" from Applications.
+  - [ ] Delete "Keynote" from Applications.
+  - [ ] Delete "Pages" from Applications.
+  - [ ] Delete "Numbers" from Applications.
+- [ ] Update App Store software
   - [ ] App Store -> Updates -> Update All.
+
+### Basic settings
+
 - [ ] Configure basic settings (Restart afterwards)
 
   ```
@@ -27,14 +37,14 @@
   - **Lock Screen**
     - [ ] Start Screen Saver when inactive - never
     - [ ] Turn display off on battery when inactive - For 10 minutes
-  - **Keyboad**
+  - **Keyboard**
     - [ ] Press (world) key to - Do nothing
     - [ ] Keyboard navigation - On
     - [ ] Keyboard Shortcuts... -> App Shortcuts
       - All Applications -> Show Help menu - Off
-      - Google Chrome
-        - Select Previous Tab - Alt-Cmd-8
-        - Select Next Tab - Alt-Cmd-9
+      - Google Chrome/Brave
+        - Select Previous Tab - ⌥⌘8
+        - Select Next Tab - ⌥⌘9
   - **Mouse** (needs connected Magic Mouse)
     - [ ] Secondary click - Click Right Side
   - **Trackpad**
@@ -55,31 +65,14 @@
       - Top right: Mission Control
       - Bottom right: Desktop
       - Bottom left: Launchpad
-- [ ] Setup ssh for git
+  - **Universal Control**
+    - [ ] Configure accordingly
 
-  - [ ] [Generate a new ssh key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
+### Setup git
 
-    ```
-    ssh-keygen -t ed25519 -C "your_email@example.com"
+tbd
 
-    touch ~/.ssh/config
-    ```
-
-    ```
-    Host *.github.com
-      AddKeysToAgent yes
-      IdentityFile ~/.ssh/id_ed25519
-    ```
-
-    ```
-    ssh-add ~/.ssh/id_ed25519
-    ```
-
-  - [ ] Add the key to GitHub
-    ```
-    pbcopy < ~/.ssh/id_ed25519.pub
-    ```
-    On GitHub: Settings -> SSH and GPG keys -> New SSH key
+### Clone .dotfiles
 
 - [ ] Clone and bootstrap these dotfiles
   - [ ] Clone the repository to `~/.dotfiles`:
