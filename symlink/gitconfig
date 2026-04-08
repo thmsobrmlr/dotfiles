@@ -1,97 +1,125 @@
 [init]
   defaultBranch = main
 
+[branch]
+  sort = -committerdate
+  autosetupmerge = false
+
+[column]
+  ui = auto
+
+[tag]
+  sort = version:refname
+
+[diff]
+  algorithm = histogram
+  colorMoved = plain
+  mnemonicPrefix = true
+  renames = true
+
 [alias]
-  # View abbreviated SHA and history graph of the latest 20 commits
   l = log --graph --abbrev-commit --date=relative
-
-  # Show the diff between the latest commit and the current state
   d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
-
-  # `git di $number` shows the diff between the state `$number` revisions ago and the current state
   di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
-
-  # Get the main branch name (usually main or master)
   main-branch = !git symbolic-ref refs/remotes/origin/HEAD | cut -d'/' -f4
 
 [core]
-  # Use custom `.gitignore` and `.gitattributes`
-  excludesfile = ~/.gitignore
+  excludesfile = /Users/thomas/.gitignore
   attributesfile = ~/.gitattributes
-
-  # Treat spaces before tabs and all kinds of trailing whitespace as an error
-  # [default] trailing-space: looks for spaces at the end of a line
-  # [default] space-before-tab: looks for spaces before tabs at the beginning of a line
   whitespace = space-before-tab,-indent-with-non-tab,trailing-space
-
-  # Make `git rebase` safer on OS X
-  # More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
   trustctime = false
-
-  # Prevent showing files whose names contain non-ASCII symbols as unversioned.
-  # http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
   precomposeunicode = false
-	editor = /usr/bin/vim
-	ignorecase = false
-	preloadindex = true
+  editor = /usr/bin/vim
+  ignorecase = false
+  preloadIndex = true
 
 [push]
   default = simple
   autoSetupRemote = true
+  followTags = false
+
+[fetch]
+  prune = true
+  all = true
+  stat = true
+  noTags = true
 
 [pull]
-	ff = only
+  rebase = true
+  ff = false
+
+[rebase]
+  autoStash = true
 
 [pager]
-    diff = delta
-    log = delta
-    reflog = delta
-    show = delta
+  diff = delta
+  log = delta
+  reflog = delta
+  show = delta
 
 [interactive]
-    diffFilter = delta --color-only --features=interactive
+  diffFilter = delta --color-only --features=interactive
+
+[help]
+  autocorrect = prompt
+
+[commit]
+  verbose = true
+  gpgsign = true
+  template = /Users/thomas/.stCommitMsg
+
+[rerere]
+  enabled = true
+  autoupdate = true
 
 [delta]
-    features = side-by-side line-numbers decorations
-    syntax-theme = Dracula
-    plus-style = syntax "#003800"
-    minus-style = syntax "#3f0001"
+  features = side-by-side line-numbers decorations
+  syntax-theme = Dracula
+  plus-style = syntax "#003800"
+  minus-style = syntax "#3f0001"
 
 [delta "interactive"]
-    keep-plus-minus-markers = false
+  keep-plus-minus-markers = false
 
 [delta "decorations"]
-    # commit-decoration-style = bold yellow box ul
-    file-style = bold
-    # hunk-header-decoration-style = cyan box ul
-    hunk-header-style = file line-number syntax
+  file-style = bold
+  hunk-header-style = file line-number syntax
 
 [delta "line-numbers"]
-    line-numbers-left-style = cyan
-    line-numbers-right-style = cyan
-    line-numbers-minus-style = 124
-    line-numbers-plus-style = 28
+  line-numbers-left-style = cyan
+  line-numbers-right-style = cyan
+  line-numbers-minus-style = 124
+  line-numbers-plus-style = 28
 
 [include]
   path = ~/.dotfiles/private/gitconfig
 
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	required = true
-	process = git-lfs filter-process
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  required = true
+  process = git-lfs filter-process
 
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	cmd = /usr/local/bin/ksdiff -w \"$LOCAL\" \"$REMOTE\"
 	path = 
 
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
-[commit]
-	gpgsign = true
+
 [gpg]
-	format = ssh
+  format = ssh
+
+[gpg "ssh"]
+    allowedSignersFile = ~/.gitallowedsigners
 
 [diff "plist"]
-	textconv = plutil -convert xml1 -o -
+  textconv = plutil -convert xml1 -o -
+
+[user]
+  name = Thomas Obermüller
+  email = thomas.obermueller@gmail.com
+
+[remote "origin"]
+  tagOpt = --no-tags
