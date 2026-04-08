@@ -31,7 +31,6 @@ source $HOME/.aliases
 ################################################################################
 # Binaries                                                                     #
 ################################################################################
-
 export PATH=$HOME/.dotfiles/bin:$PATH
 
 ################################################################################
@@ -40,13 +39,6 @@ export PATH=$HOME/.dotfiles/bin:$PATH
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 export PATH="/opt/homebrew/bin:$PATH"
-
-################################################################################
-# Ruby                                                                         #
-################################################################################
-
-# rbenv
-eval "$(rbenv init -)" # Enable rbenv shims and autocompletion
 
 ################################################################################
 # Python                                                                       #
@@ -105,11 +97,6 @@ esac
 # pnpm end
 
 ################################################################################
-# Java                                                                         #
-################################################################################
-export JAVA_HOME="/Applications/Android Studio.app/Contents/jre/Contents/Home"
-
-################################################################################
 # Postgres                                                                     #
 ################################################################################
 export PATH="/usr/local/Cellar/postgresql@9.6/9.6.9/bin:$PATH"
@@ -124,10 +111,3 @@ alias kubectl=kubecolor
 # make completion work with kubecolor
 compdef kubecolor=kubectl
 
-################################################################################
-# Android SDK                                                                  #
-################################################################################
-export ANDROID_SDK="/Users/thomas/Library/Android/sdk"
-export ANDROID_SDK_ROOT="/Users/thomas/Library/Android/sdk"
-export PATH="$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools:$PATH"
-export PATH="$ANDROID_SDK/emulator:$ANDROID_SDK/tools:$PATH"
