@@ -31,7 +31,8 @@ source $HOME/.aliases
 ################################################################################
 # Binaries                                                                     #
 ################################################################################
-export PATH=$HOME/.dotfiles/bin:$PATH
+export PATH="$HOME/.dotfiles/bin:$PATH" # binaries provided in these dotfiles
+export PATH="$HOME/.local/bin:$PATH" # common includes path
 
 ################################################################################
 # Homebrew                                                                     #
@@ -40,65 +41,39 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 export PATH="/opt/homebrew/bin:$PATH"
 
-################################################################################
-# Python                                                                       #
-################################################################################
-
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+# Prefer GNU/Linux versions of util-linux tools (installed via Homebrew) over macOS’s BSD variants.
+# This enables commands like `flock`, `column` with GNU flags, and other Linux-compatible behavior
+# that some scripts expect.
+#
+# Required for PostHog's Flox activation hook.
+export PATH="/opt/homebrew/opt/util-linux/bin:$PATH"
 
 ################################################################################
-# Javascript / Typescript / Node                                               #
+# Flox / Direnv (PostHog)                                                      #
 ################################################################################
 
-NVM_SYMLINK_CURRENT=true
+# Initialize direnv.
+eval "$(direnv hook zsh)"
 
-# nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
-
-export PATH="$HOME/.nvm/current/bin:$PATH"
-
-# run nvm use automatically
-# https://stackoverflow.com/questions/23556330/run-nvm-use-automatically-every-time-theres-a-nvmrc-file-on-the-directory
-autoload -U add-zsh-hook
-load-nvmrc() {
-  local node_version="$(nvm version)"
-  local nvmrc_path="$(nvm_find_nvmrc)"
-
-  if [ -n "$nvmrc_path" ]; then
-    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-
-    if [ "$nvmrc_node_version" = "N/A" ]; then
-      nvm install
-    elif [ "$nvmrc_node_version" != "$node_version" ]; then
-      nvm use
-    fi
-  elif [ "$node_version" != "$(nvm version default)" ]; then
-    echo "Reverting to nvm default version"
-    nvm use default
-  fi
-}
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
-
-# pnpm
-export PNPM_HOME="/Users/thomas/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
+# do not alert shell prompt, as we're using starship
+export FLOX_PROMPT_DISABLE=1
 
 ################################################################################
-# Kubernetes                                                                   #
+# Local Overrides                                                              #
 ################################################################################
-source <(kubectl completion zsh)
 
-alias kubectl=kubecolor
-# make completion work with kubecolor
-compdef kubecolor=kubectl
+DOTFILES_DIR="$HOME/.dotfiles"
+DOTFILES_HOST="${HOST:-$(hostname -s)}"
+DOTFILES_HOST="${DOTFILES_HOST%%.*}"
+
+# Source tracked machine config first, then private overrides.
+for zshrc_include in \
+  "$DOTFILES_DIR/machine/zshrc.$DOTFILES_HOST" \
+  "$DOTFILES_DIR/private/zshrc" \
+  "$DOTFILES_DIR/private/zshrc.$DOTFILES_HOST"
+do
+  [ -f "$zshrc_include" ] && source "$zshrc_include"
+done
+
+unset zshrc_include
 

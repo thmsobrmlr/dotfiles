@@ -19,5 +19,3 @@ alias gcm='git commit --no-verify --no-edit'
 alias gd='git diff'
 alias gds='git diff --staged'
 
-
-alias be='bundle exec'

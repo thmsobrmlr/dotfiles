@@ -18,7 +18,7 @@
 
 #### Hostname
 
-- [ ] General > About > Click the Name field at the top > Enter desired name e.g. "Thomas’s MacBook Pro (Personal)"
+- [ ] General > About > Click the Name field at the top > Enter desired name e.g. "Thomas's MacBook Pro (Personal)"
 - [ ] Confirm with:
   ```
   scutil --get ComputerName
@@ -26,12 +26,11 @@
   scutil --get HostName
   hostname
 
-  Thomas’s MacBook Pro (Personal)
+  Thomas's MacBook Pro (Personal)
   Thomass-MacBook-Pro-Personal
   HostName: not set
   Thomass-MacBook-Pro-Personal.local
   ```
-
 
 #### Desktop & Dock
 - [ ] Automatically show and hide the Dock - On
@@ -49,7 +48,7 @@
     - Select Previous Tab - ⌥⌘8
     - Select Next Tab - ⌥⌘9
 
-#### Mouse** (needs connected Magic Mous
+#### Mouse (needs connected Magic Mouse)
 - [ ] Secondary click - Click Right Side
 
 #### Trackpad

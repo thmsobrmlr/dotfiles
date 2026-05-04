@@ -1,2 +1,9 @@
-# don't display username in prompt for default user
+# Shared private zsh config that applies to every machine.
+
+# Don't display username in prompt for default user.
 DEFAULT_USER="myusername"
+
+# Put committed machine-specific config in:
+#   ~/.dotfiles/machine/zshrc.<hostname>
+#
+# Keep this file for secrets or local-only values that should not be committed.
