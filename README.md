@@ -188,6 +188,10 @@ Set key bindings for navigating tabs in Preferences -> Keys:
 - Next Tab: CMD+ALT+9
 - Previous Tab: CMD+ALT+8
 
+## VS Code
+
+`./symlink.sh` links VS Code keybindings from `$HOME/.dotfiles/vscode/keybindings.json` to `$HOME/Library/Application Support/Code/User/keybindings.json`.
+
 ## Terminal
 
 ### Solarized Theme
