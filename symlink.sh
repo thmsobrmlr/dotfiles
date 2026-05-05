@@ -2,6 +2,9 @@
 
 ln -sfv "$PWD/vim" "$HOME/.vim";
 
+mkdir -p "$HOME/.config"
+ln -sfv "$PWD/nvim" "$HOME/.config/nvim";
+
 cd symlink
 for f in *; do ln -sfv "$PWD/$f" "$HOME/.$f"; done
 
