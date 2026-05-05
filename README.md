@@ -18,7 +18,7 @@
 
 #### Hostname
 
-- [ ] General > About > Click the Name field at the top > Enter desired name e.g. "Thomas's MacBook Pro (Personal)"
+- [ ] General > About > Click the Name field at the top > Enter desired name e.g. "Thomas’s MacBook Pro (Personal)"
 - [ ] Confirm with:
   ```
   scutil --get ComputerName
@@ -26,7 +26,7 @@
   scutil --get HostName
   hostname
 
-  Thomas's MacBook Pro (Personal)
+  Thomas’s MacBook Pro (Personal)
   Thomass-MacBook-Pro-Personal
   HostName: not set
   Thomass-MacBook-Pro-Personal.local
