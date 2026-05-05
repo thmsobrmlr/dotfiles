@@ -95,11 +95,6 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufReadPost" }, {
 local map = vim.keymap.set
 local silent = { silent = true }
 
-map({ "n", "v", "i" }, "<Up>", "<nop>")
-map({ "n", "v", "i" }, "<Down>", "<nop>")
-map({ "n", "v", "i" }, "<Left>", "<nop>")
-map({ "n", "v", "i" }, "<Right>", "<nop>")
-
 map("n", "<C-J>", "<C-W><C-J>")
 map("n", "<C-K>", "<C-W><C-K>")
 map("n", "<C-L>", "<C-W><C-L>")
@@ -118,3 +113,35 @@ vim.g.NERDTreeMinimalUI = 1
 vim.g.NERDTreeMouseMode = 2
 vim.g.jsx_ext_required = 0
 vim.g.syntastic_javascript_checkers = { "eslint" }
+
+-- Temporary fix for Shift+Number not working inside VS Code.
+-- https://github.com/neovim/neovim/issues/38651
+if vim.env.TERM_PROGRAM == "vscode" then
+  -- Adjust to match your keyboard layout if necessary
+  local shifted_digits = {
+    ["<S-1>"] = '!',
+    ["<S-2>"] = '@',
+    ["<S-3>"] = '#',
+    ["<S-4>"] = '$',
+    ["<S-5>"] = '%',
+    ["<S-6>"] = '&',
+    ["<S-7>"] = '^',
+    ["<S-8>"] = '*',
+    ["<S-9>"] = '(',
+    ["<S-0>"] = ')',
+  }
+
+  for lhs, rhs in pairs(shifted_digits) do
+    vim.keymap.set({ "n", "x", "i" }, lhs, rhs, {
+      noremap = true,
+      silent = true,
+    })
+
+    vim.keymap.set("c", lhs, function()
+      return rhs
+    end, {
+      expr = true,
+      noremap = true,
+    })
+  end
+end
