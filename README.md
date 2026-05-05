@@ -115,51 +115,39 @@ Follow the [1Password SSH key management guide](https://developer.1password.com/
     echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
     eval "$(/opt/homebrew/bin/brew shellenv)"
     ```
-- [ ] Install apps with [Homebrew Cask](https://formulae.brew.sh/cask/)
-
-  ```
-  brew install --cask 1password
-  brew install --cask google-chrome
-  brew install --cask firefox
-  brew install --cask iterm2
-  brew install --cask slack
-  brew install --cask zoom
-  brew install --cask notion
-  brew install --cask visual-studio-code
-  brew install --cask spotify
-  brew install --cask figma
-  brew install --cask sourcetree
-  brew install --cask docker
-  brew install --cask flux
-  brew install --cask skitch
-  ```
+- [ ] Install the following apps:
+  - [ ] 1password
+  - [ ] brave
+  - [ ] slack
+  - [ ] notion
+  - [ ] vs code
+  - [ ] spotify
+  - [ ] orbstack
+  - [ ] magnet
+  - [ ] airmail
 
 - [ ] Install cli utils with Homebrew
 
   `brew install zsh`
   `brew install git`
   `brew install starship`
+  `brew install fzf` - ctrl+r history search and more
+  `brew install gh` - official github cli
+  `brew install kubectx` - kubectx and kubens
+
+  ```
+
+- [ ] Optionally:
+
+  `brew install pyenv` - pyenv
   `brew install git-delta`
   `brew install colordiff`
   `brew install dty1er/tap/kubecolor`
-  `brew install kubectx` - kubectx and kubens
-  `brew install act` - run github actions locally
-  `brew install doctl` - digital ocean command line tools
-  `brew install rbenv ruby-build` - rbenv
-  `brew install pyenv` - pyenv
-  `brew install gh` - official github cli
-  `brew install fig`
-  `brew install fastlane`
-  `brew install fzf` - ctrl+r history search and more
-  `brew install ctop` - top for containers / docker
 
-- [ ] Install App Store apps
-  - [ ] Magnet
-  - [ ] Airmail
+- [ ] Install [Oh My Zsh](https://ohmyz.sh/)
+  ```
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended --keep-zshrc
 
-
-
-`sudo scutil --set HostName thomas-mbp.local`
 
 ## Fonts
 
