@@ -112,7 +112,7 @@
   format = ssh
 
 [gpg "ssh"]
-    allowedSignersFile = ~/.gitallowedsigners
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
 
 [diff "plist"]
   textconv = plutil -convert xml1 -o -
@@ -120,6 +120,7 @@
 [user]
   name = Thomas Obermüller
   email = thomas.obermueller@gmail.com
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKaAmMYnpE2wuaBfWnhJT9IY3y0kpCzLt4aEBmV6Cceq
 
 [remote "origin"]
   tagOpt = --no-tags
