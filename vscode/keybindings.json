@@ -1,0 +1,57 @@
+// Place your key bindings in this file to override the defaults
+[
+  {
+    "key": "alt+cmd+9",
+    "command": "workbench.action.nextEditor",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "ctrl+alt+cmd+9",
+    "command": "-workbench.action.nextEditor"
+  },
+  {
+    "key": "alt+cmd+8",
+    "command": "workbench.action.previousEditor",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "ctrl+alt+cmd+8",
+    "command": "-workbench.action.previousEditor"
+  },
+  // {
+  //   "key": "cmd+n",
+  //   "command": "fileutils.newFile",
+  //   "when": "!terminalFocus"
+  // },
+
+  // terminal
+  {
+    "key": "cmd+k",
+    "command": "workbench.action.terminal.focus"
+  },
+  {
+    "key": "cmd+k",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "alt+cmd+9",
+    "command": "workbench.action.terminal.focusNext",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "alt+cmd+8",
+    "command": "workbench.action.terminal.focusPrevious",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+w",
+    "command": "workbench.action.terminal.kill",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+n",
+    "command": "workbench.action.terminal.newInActiveWorkspace",
+    "when": "terminalFocus"
+  }
+]
